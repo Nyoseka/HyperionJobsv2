@@ -74,6 +74,7 @@ app.get("/registro", function (req, res) {
 app.get("/apply-job/:_id", loggedIn, async function (req, res) {
     //el id es el del trabajo al que el usuario hizo click en job-list
     var id = req.params._id;
+    
     //buscar trabajo por el id 
     currentJob = await Job.findOne({_id:id}).exec();
   

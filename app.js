@@ -77,7 +77,7 @@ app.get("/apply-job/:_id", loggedIn, async function (req, res) {
     
     //buscar trabajo por el id 
     currentJob = await Job.findOne({_id:id}).exec();
-  
+
   res.render("apply-job", {
     loginstatus:loginstatus,
     job1:currentJob,
@@ -128,7 +128,7 @@ app.get("/publishjob", loggedIn, (req, res) =>{
 app.post("/apply-job/:_id", loggedIn, async (req, res) =>{
   //el id es el del trabajo al que el usuario hizo click en job-list
   var id = req.params._id;
-  //buscar trabajo por el id 
+  //buscar trabajo por el id
   currentJob = await Job.findOne({_id:id}).exec();
 
 
@@ -193,7 +193,7 @@ app.post("/registro", async (req, res) => {
       password: hash,
       email,
       name,
-      qualifications
+      qualifications,
     })
       .then((user) =>
         res.status(200).json({

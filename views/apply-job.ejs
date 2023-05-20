@@ -44,14 +44,33 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-<!--         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Cargando...</span>
-            </div>
+
+<!--La barra de navegación presentaba algunos problemas en partials, por lo que se decidió poner las direcciones estaticas completas
+para un mejor funcionamiento-->
+ <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a href="/" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+        <h1 class="m-0 text-primary">HyperionJobs</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="/" class="nav-item nav-link">Inicio</a>
+            <a href="http://localhost:3000/about" class="nav-item nav-link">Sobre nosotros</a>
+            <a href="http://localhost:3000/job-list" class="nav-item nav-link">Trabajos</a>
+            <% if(loginstatus) { %>
+            <a href="https://forms.gle/BWK5XoeLu311DJ439" class="nav-item nav-link">Encuesta</a>
+            <a href="http://localhost:3000/logout" class="nav-item nav-link">Cerrar sesion</a>
+            <a href="http://localhost:3000/profile" class="nav-item nav-link">Perfil</a>
+            <% } else { %>
+            <a href="http://localhost:3000/login" class="nav-item nav-link">Iniciar sesión</a>
+            <% } %>
         </div>
- -->
-        <%- include("partials/navbar") %>
+        <a href="http://localhost:3000/publishjob" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Publica un trabajo<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
+
 
         <!-- Header End -->
         <div class="container-xxl py-5 bg-dark page-header mb-5">
@@ -116,7 +135,7 @@
                         <textarea class="form-control" rows="5" name="description" placeholder="Información adicional, preséntate con la empresa"></textarea>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary w-100" type="submit">Aplicar ahora</button>
+                        <button class="btn btn-primary w-100" type="submit" onprogress="alertSubmit">Postula ahora</button>
                     </div>
                 </div>
             </form>
@@ -135,18 +154,6 @@
 </div>
 </div>
 </div>
-
-                        <!-- <div class="mb-5">
-                            <h4 class="mb-3">Descripción<nav></nav></h4>
-                            <p>El trabajo consiste en proporcionar dirección, orientación y liderazgo a todo el departamento de marketing. Tiene entre sus funciones la comercialización y promoción de un producto particular o grupo de productos de su empresa</p>
-                            <h4 class="mb-3">Responsabilidades</h4>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Estudiar en profundidad el producto ofertado, su competencia y su mercado.</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Desarrollar estrategias y acciones de marketing integrales, considerando la creación de valor para el cliente, el comportamiento de compra y la gestión de las relaciones</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Realizar campañas de mercadotecnia desde su concepción hasta su ejecución</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Manejar el presupuesto de marketing y asignar los fondos disponibles de forma eficiente.</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Evaluar e informar del rendimiento de las campañas de mercadotecnia</li>
-                            </ul>-->
         
 
         <!-- Back to Top -->

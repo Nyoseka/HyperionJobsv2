@@ -53,13 +53,15 @@
             </div>
         </div>  
         <!-- Header End -->
-        <% if (user) { %>
-        <h2 id="title"><%= user.name %></h2>
-        <h4>Usuario: <%= user.username %></h4>
-        <p><b>Habilidades: </b><%= user.qualifications %></p>
-        <p><b>Correo: </b><%= user.email %></p>
-        <% } %>
-
+            <% if (user) { %>
+                <div class="containerlist">
+            <h4 style="text-align: center;"><b>Perfil:</b></h4><br></br>
+            <h6 id="title" style="text-align:center;"><b>Nombre: </b><%= user.name %></h6>
+            <h6 style="text-align:center;"><i>@<%= user.username %></i></h6><br><br/>
+            <p style="text-align:center;"><b>Habilidades: </b><%= user.qualifications %></p>
+            <p style="text-align:center;"><b>Correo: </b><%= user.email %></p>
+            <% } %>
+            </div>
         
 
         <!-- Back to Top -->
